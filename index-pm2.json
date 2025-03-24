@@ -1,6 +1,6 @@
 {
   "script": "index.js",
-  "name": "index",
+  "name": "GoodWeekBot",
   "filter_env": [],
   "namespace": "default",
   "env": {},
