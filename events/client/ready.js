@@ -7,7 +7,7 @@ module.exports = {
     async execute(client) {
         let guildsCount = await client.guilds.fetch();
 
-        client.user.setPresence({ activities: [{ name: "You", type: ActivityType.Watching }], status: "online" });
+        client.user.setPresence({ activities: [{ name: "Votre horrible semaine", type: ActivityType.Watching }], status: "online" });
 
         await client.application.commands.set(client.commands.map(cmd => cmd));
         Logger.client(`Bot ready on ${guildsCount.size} servers\n\n--------\n${process.env.DISCORD_BOT_NAME} ©2023\n--------\nAuthor:\n-Silvus\n--------\n`);

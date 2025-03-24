@@ -43,9 +43,10 @@ module.exports = {
   usage: 'forceweekannonce',
   examples: 'forceweekannonce',
   description: 'Relance le message de la bonne semaine de merde',
-  async runInteraction(client) {
-    const channel = client.channels.cache.get(1337404938053222421)
+  async runInteraction(client, interaction) {
+    const channel = client.channels.cache.get("1337404938053222421")
     const phrase = semainesDeMerde[Math.floor(Math.random() * semainesDeMerde.length)];
+    interaction.reply({content:`Le message à été envoyer dans le salon <#1337404938053222421>`, ephemeral: true})
     channel.send(phrase)
   }
 };
