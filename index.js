@@ -3,11 +3,12 @@ const dotenv = require('dotenv');
 const CommandUtil = require('./utils/handlers/CommandUtil.js');
 const EventUtil = require('./utils/handlers/EventUtil.js');
 const SelectUtil = require('./utils/handlers/SelectUtil.js');
+const WeekCron = require('./utils/handlers/WeekCron.js');
 dotenv.config();
 const client = new Client({intents: 579});
 client.commands = new Collection();
 ['selects'].forEach(x => client[x] = new Collection());
-[CommandUtil, EventUtil, SelectUtil].forEach(handler => handler(client));
+[CommandUtil, EventUtil, SelectUtil, WeekCron].forEach(handler => handler(client));
 process.on('exit', code => {
   console.log(`le processus s'est arrêté avec le code ${code}!`);
 });
